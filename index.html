@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="text-white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Gif Thing</title>
+    
+    
+</head>
+    <body>
+
+        <div class="container">
+            <h1>Search Results</h1>
+
+            <!-- Rendered Buttons will get Dumped Here  -->
+            <div id="buttons-view"></div>
+
+            <form id="gif-form">
+                <label for="gif-input">Add a gif</label>
+                <input type="text" id="gif-input"><br>
+
+                <!-- Button triggers new movie to be added -->
+                <input id="add-gif" type="submit" value="Click to create new button">
+            </form>
+
+            <!-- gifs will Get Dumped Here -->
+            <div id="gif-view"></div>
+
+
+            
+        </div>
+        
+    </body>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- javascript file -->
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+</html>

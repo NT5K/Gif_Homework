@@ -1,0 +1,7 @@
+ button,
+    div,
+    form,
+    input,
+    .change-state {
+      margin: 5px;
+    }
