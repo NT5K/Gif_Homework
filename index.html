@@ -16,22 +16,32 @@
     
     
 </head>
-    <body>
+    <body class="text-center">
 
         <div class="container">
-            <h1>Search Results</h1>
+            <h2>Giphy Search Thing</h2>
+            
+            <!-- search form -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 ">
+                    <form id="gif-form" class="input-group">
+                        
+                        <!-- Button triggers new movie to be added -->
+                        <span class="input-group-btn">
+                            <button id="add-gif-button" type="submit" class="btn btn-primary">Create New Button</button>
+                        </span>
 
+                        <!-- input for new button text -->
+                        <input type="text" placeholder="giphy word to search" class="form-control" id="gif-search-input" value="">
+
+
+                    </form>
+                </div>
+            </div>
+            
             <!-- Rendered Buttons will get Dumped Here  -->
             <div id="buttons-view-area"></div>
 
-            <!-- search form -->
-            <form id="gif-form">
-                <label for="gif-search-input">Add a gif</label>
-                <input type="text" class="form-control w-50" id="gif-search-input">
-
-                <!-- Button triggers new movie to be added -->
-                <button id="add-gif-button" type="button" class="btn btn-secondary">Add New Button</button>
-            </form>
 
             <!-- gifs will Get Dumped Here -->
              <div>

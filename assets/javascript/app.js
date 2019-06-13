@@ -31,7 +31,8 @@ function displayGifImage() {
 
             /*  <div class="col-3">gifImage</div> */
              const div = $("<div>")       
-             div.addClass("col-4")
+            div.addClass("col-lg-4 col-md-4 col-6")
+            
 
 
             /*  <img src="stillImageUrl" alt="gif image"  data-animate="animatedImageURL"
