@@ -1,6 +1,6 @@
 
 //array for storing new buttons
-const gifName = ["cat", "dog", "fish", "bird", "plane"];
+const gifName = ["cat", "dog", "fish", "bird", "plane", "halo", "apple", "dragon"];
 
 function displayGifImage() {
     // every time a button is clicked, empty the gif view area
@@ -19,7 +19,7 @@ function displayGifImage() {
         method: "GET"
     }).then(function (response) {   
         //loop through the JSON ten times and display a new <img> tag each time
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
 
             //create reusable variables for animate and still URL's
             const stillImageUrl = response.data[i].images.fixed_height_small_still.url;
@@ -29,10 +29,9 @@ function displayGifImage() {
             console.log(stillImageUrl);
             console.log(rating)
 
-            /*  <div class="col-3"><img src="stillImageUrl" alt="gif image"  data-animate="animatedImageURL"
-                    data-still="stillImageURL" data-state="still" class="change-state"></div>*/
+            /*  <div class="col-3">gifImage</div> */
              const div = $("<div>")       
-             div.addClass("col-3")
+             div.addClass("col-4")
 
 
             /*  <img src="stillImageUrl" alt="gif image"  data-animate="animatedImageURL"
@@ -44,12 +43,16 @@ function displayGifImage() {
             gifImage.attr("data-still", stillImageUrl);
             gifImage.attr("data-state", "still");
             gifImage.addClass("change-state");
-            //load gif ahead of of previous gif
-            $("#gif-view-area").prepend(gifImage);
-
-            const p = $("<span>");
+            
+            //create paragraph for rating
+            const p = $("<p>");
             p.text("Rating: " + rating)
-            $("#gif-view-area").prepend(p);
+
+            //append the new div which includes the image(gifImage) and a paragraph(p) to the gif-view-area
+            $(div).append(p);
+            $(div).append(gifImage);
+            $("#gif-view-area").append(div);
+
         }
     });
 }  
@@ -60,6 +63,9 @@ function renderButtons() {
         //<button class="onGifClick" data-name="gifName[iterated]">text pulled from gifName[iterated]</button>
         const a = $("<button>");
         a.addClass("onGifClick");
+        a.addClass("btn-secondary")
+        a.addClass("btn")
+        a.attr("type", "button");
         // create attribute with user input data
         a.attr("data-name", gifName[i]);
         // text for button
