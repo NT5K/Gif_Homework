@@ -1,11 +1,29 @@
- button,
-    form,
-    input,
-    .change-state {
-      margin: 5px;
-    }
+button,
+form,
+input,
+.change-state {
+  margin: 5px;
+}
 
+#fire-gif {
+  width: 40px
+}
 
-    #logo-gif {
-      width: 100px
-    }
+#logo-gif {
+  width: 100px
+}
+
+.rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.rotateimgNeg90 {
+  -webkit-transform:rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}

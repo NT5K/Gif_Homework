@@ -1,6 +1,6 @@
 
 //array for storing new buttons
-const gifName = ["cat", "dog", "fish", "bird", "plane", "halo", "apple", "dragon"];
+const gifName = ["weed", "kardashians", "seinfeld", "tesla", "pluto", "toucan", "kangaroo", "weekend"];
 
 function displayGifImage() {
     // every time a button is clicked, empty the gif view area
@@ -10,8 +10,9 @@ function displayGifImage() {
     const searchResult = $(this).attr("data-name");
 
     //variable for giphy api that takes in the search data
+    const limit = 12
     const apiKey = "0FbXW4F9HCcDpbAqGA9MlQ0zwpmzri6I";
-    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=40&q=" + searchResult;
+    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit="+ limit +"&q=" + searchResult;
     
     //query the giphy api
     $.ajax({
@@ -20,7 +21,7 @@ function displayGifImage() {
     }).then(function (response) {
 
         //loop through the JSON ten times and display a new <img> tag each time
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < limit; i++) {
 
             //create reusable variables for animate and still URL's
             const stillImageUrl = response.data[i].images.fixed_height_small_still.url;
@@ -94,6 +95,11 @@ $("#add-gif-button").on("click", function (event) {
     // variable to store the value of user input
 
     const gifNameFromText = $("#gif-search-input").val().trim();
+    
+    // prevent creation of button if no text input
+    if (!gifNameFromText) { 
+        return false 
+    }
 
     // add the variable to the gifName array
     gifName.push(gifNameFromText);
