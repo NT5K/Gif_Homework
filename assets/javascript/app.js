@@ -11,7 +11,7 @@ function displayGifImage() {
 
     //variable for giphy api that takes in the search data
     const apiKey = "0FbXW4F9HCcDpbAqGA9MlQ0zwpmzri6I";
-    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=12&q=" + searchResult;
+    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=40&q=" + searchResult;
     
     //query the giphy api
     $.ajax({
@@ -20,7 +20,7 @@ function displayGifImage() {
     }).then(function (response) {
 
         //loop through the JSON ten times and display a new <img> tag each time
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 40; i++) {
 
             //create reusable variables for animate and still URL's
             const stillImageUrl = response.data[i].images.fixed_height_small_still.url;
@@ -32,7 +32,7 @@ function displayGifImage() {
 
             /*  <div class="col-3"><p>Rating:</p>gifImage</div> */
              const div = $("<div>");
-            div.addClass("col-lg-4 col-md-4 col-6");
+            div.addClass("col-lg-3 col-md-4 col-6");
 
             /*  <img src="stillImageUrl" alt="gif image"  data-animate="animatedImageURL"
                     data-still="stillImageURL" data-state="still" class="change-state"> */       
@@ -47,6 +47,7 @@ function displayGifImage() {
             //create paragraph for rating
             const p = $("<p>");
             p.text("Rating: " + rating);
+            p.addClass("mb-5")
 
             //append the new div which includes the image(gifImage) and a paragraph(p) to the gif-view-area
             // <div class="col-3">gifImage then rating</div>
