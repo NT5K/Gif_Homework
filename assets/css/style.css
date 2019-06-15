@@ -13,17 +13,35 @@ input,
   width: 100px
 }
 
-.rotateimg90 {
+.portfolio-link {
+  position: static;
+  top: 0;
+  margin-top: -18px;
+  margin-bottom: -12px
+}
+
+.rotateImg90 {
   -webkit-transform:rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.rotateimgNeg90 {
+.rotateImgNeg90 {
   -webkit-transform:rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+
+
+@media screen and (max-width: 375px) { 
+
+  .portfolio-link {
+    font-size: 12px
+  }
+
+
+
 }

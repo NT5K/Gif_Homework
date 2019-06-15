@@ -12,7 +12,7 @@ function displayGifImage() {
     //variable for giphy api that takes in the search data
     const limit = 12
     const apiKey = "0FbXW4F9HCcDpbAqGA9MlQ0zwpmzri6I";
-    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit="+ limit +"&q=" + searchResult;
+    const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit="+ limit +"&q=" + searchResult + "&rating=pg";
     
     //query the giphy api
     $.ajax({
@@ -57,6 +57,7 @@ function displayGifImage() {
 
             // append newly created div to the viewing area
             $("#gif-view-area").append(div);
+
         }
     });
 }  
@@ -92,8 +93,8 @@ function renderButtons() {
 $("#add-gif-button").on("click", function (event) {
 
     event.preventDefault();
-    // variable to store the value of user input
 
+    // variable to store the value of user input
     const gifNameFromText = $("#gif-search-input").val().trim();
     
     // prevent creation of button if no text input
@@ -107,6 +108,10 @@ $("#add-gif-button").on("click", function (event) {
 
     // create new button function
     renderButtons();
+
+    // localStorage.clear();
+
+    // localStorage.setItem("name", gifNameFromText);
 });
 
 $(document).on("click", ".onGifClick", displayGifImage);
