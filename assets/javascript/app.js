@@ -1,6 +1,6 @@
 
 //array for storing new buttons
-const gifName = ["weed", "kardashians", "seinfeld", "tesla", "pluto", "toucan", "kangaroo", "weekend"];
+const gifName = ["water", "kardashians", "seinfeld", "tesla", "pluto", "toucan", "kangaroo", "weekend"];
 
 function displayGifImage() {
     // every time a button is clicked, empty the gif view area
